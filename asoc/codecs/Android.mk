@@ -96,6 +96,7 @@ LOCAL_MODULE_PATH         := $(KERNEL_MODULES_OUT)
 include $(DLKM_DIR)/AndroidKernelModule.mk
 endif
 ###########################################################
+ifdef CONFIG_SND_SOC_WSA881X
 include $(CLEAR_VARS)
 LOCAL_MODULE              := $(AUDIO_CHIPSET)_wsa881x.ko
 LOCAL_MODULE_KBUILD_NAME  := wsa881x_dlkm.ko
@@ -103,6 +104,7 @@ LOCAL_MODULE_TAGS         := optional
 LOCAL_MODULE_DEBUG_ENABLE := true
 LOCAL_MODULE_PATH         := $(KERNEL_MODULES_OUT)
 include $(DLKM_DIR)/AndroidKernelModule.mk
+endif
 ###########################################################
 include $(CLEAR_VARS)
 LOCAL_MODULE              := $(AUDIO_CHIPSET)_stub.ko
